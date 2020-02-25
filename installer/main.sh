@@ -228,11 +228,6 @@ sh() {
     /bin/sh $SETOPTIONS -e "$@"
 }
 
-if [ "$USER" = root -o "$UID" = 0 ]; then
-    # Avoid kernel panics due to slow I/O when restoring or bootstrapping
-    disablehungtask
-fi
-
 # If we specified a tarball, we need to detect the tarball type
 if [ -z "$DOWNLOADONLY" -a -n "$TARBALL" ]; then
     if [ ! -f "$TARBALL" ]; then
