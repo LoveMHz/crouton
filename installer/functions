@@ -166,7 +166,7 @@ release() {
 # sure the kernel does not panic (this is the default configuration of a vanilla
 # kernel). See crbug.com/260955 for details.
 disablehungtask() {
-    echo 0 > /proc/sys/kernel/hung_task_panic
+    # echo 0 > /proc/sys/kernel/hung_task_panic
 }
 
 # Run an awk program, without buffering its output.
